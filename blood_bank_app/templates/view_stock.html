@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View Blood Stock</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-position: center;
+    }
+    h1 {
+      max-width: 800px;
+      margin: 30px auto;
+      /* text-align: center; */
+    }
+    table {
+      max-width: 800px;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      /* max-width: 400px; */
+      margin: 30px auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    table,
+    th,
+    td {
+      border: 1px solid #ccc;
+    }
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f9f9f9;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    a {
+      text-decoration: none;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      color: #fff;
+      background-color: #007bff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+    p {
+      max-width: 800px;
+      margin: 30px auto;
+    }
+  </style>
+  <body>
+    <h1>Blood Stock</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Blood Group</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for stock in stock %}
+        <tr>
+          <td>{{ stock[0] }}</td>
+          <td>{{ stock[1] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+  </body>
+</html>
